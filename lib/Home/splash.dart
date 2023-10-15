@@ -1,4 +1,4 @@
-import 'package:Crack/stepper.dart';
+import 'package:backdrop/backdrop.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -8,6 +8,7 @@ import '../Model/systemnodel.dart';
 import '../main.dart';
 import '../utils/FirebaseManager.dart';
 import '../widgets/AuthMode.dart';
+import '../widgets/pallete.dart';
 import 'HomeMASTAR.dart';
 import '../widgets/footer.dart';
 
@@ -151,11 +152,11 @@ class _wrapperState extends State<wrapper> {
                                 : Get.deviceLocale.toString() == 'ar'
                                     ? items.titleAr
                                     : items.titleEn,
-                        style: const TextStyle(color: Colors.black54)),
+                        style: const TextStyle(color: OMNIColors.backgroundColor)),
                     centerTitle: true,
                     actions: [
                       Text(Get.deviceLocale.toString(),
-                          style: const TextStyle(color: Colors.black54))
+                          style: const TextStyle(color: OMNIColors.backgroundColor))
                     ],
                   ),
                   backLayer: ListView(
@@ -166,7 +167,7 @@ class _wrapperState extends State<wrapper> {
                             backgroundColor: Colors.transparent,
                             radius: 30,
                             child: Icon(
-                              color: Colors.black54,
+                              color: OMNIColors.backgroundColor,
                               Icons.person,
                               size: 50,
                             )),
@@ -177,14 +178,14 @@ class _wrapperState extends State<wrapper> {
                           child: Text(
                             'Login'.tr,
                             style: const TextStyle(
-                              color: Colors.black54,
+                              color: OMNIColors.backgroundColor,
                             ),
                           ),
                         ),
                         trailing: InkWell(
                             onTap: () =>
                                 FirebaseManager.shared.changeLanguage(context),
-                            child: Icon(Icons.language)),
+                            child: const Icon(Icons.language ,color: OMNIColors.backgroundColor,)),
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -196,7 +197,7 @@ class _wrapperState extends State<wrapper> {
                               child: Text(
                                 "Privacy Policy".tr,
                                 style: const TextStyle(
-                                  color: Colors.black,
+                                  color: OMNIColors.backgroundColor,
                                 ),
                               ),
                             ),
@@ -207,7 +208,7 @@ class _wrapperState extends State<wrapper> {
                             child: const Text(
                               "|",
                               style: TextStyle(
-                                color: Colors.black,
+                                color: OMNIColors.backgroundColor,
                               ),
                             ),
                           ),
@@ -218,14 +219,14 @@ class _wrapperState extends State<wrapper> {
                               child: Text(
                                 "Terms & Conditions".tr,
                                 style: const TextStyle(
-                                  color: Colors.black,
+                                  color: OMNIColors.backgroundColor,
                                 ),
                               ),
                             ),
                           )
                         ],
                       ),
-                      const Divider(),
+                      const Divider(color: OMNIColors.backgroundColor,),
                       const SizedBox(
                         height: 50.0,
                       ),

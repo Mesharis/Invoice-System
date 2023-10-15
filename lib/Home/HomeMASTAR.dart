@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:Crack/stepper.dart';
+import 'package:backdrop/backdrop.dart';
 import 'package:invoice/widgets/q_invoice.dart';
 import '../pdf/template_personal.dart';
 import '../widgets/ADD_TEAM.dart';
@@ -68,11 +68,11 @@ class _MASTARState extends State<MASTAR> {
 
   Widget appBarTitle = Text(
     "Users".tr,
-    style: const TextStyle(color: Colors.black54),
+    style: const TextStyle(color: OMNIColors.backgroundColor),
   );
   Icon actionIcon = const Icon(
     Icons.search,
-    color: Colors.black,
+    color: OMNIColors.backgroundColor,
   );
 
   @override
@@ -127,9 +127,15 @@ class _MASTARState extends State<MASTAR> {
                               if (AsyncSnapshot.hasData) {
                                 SettingsModel Setting = AsyncSnapshot.data!;
                                 return BackdropScaffold(
+                                  backgroundColor: OMNIColors.BlackBolor,
                                     appBar: BackdropAppBar(
-                                      backgroundColor:
-                                          OMNIColors.backgroundColor,
+                                      actionsIconTheme: const IconThemeData(
+                                        color: OMNIColors.backgroundColor,
+                                      ),
+                                      iconTheme: const IconThemeData(
+                                        color: OMNIColors.backgroundColor,
+                                      ),
+                                      backgroundColor: OMNIColors.BlackBolor,
                                       centerTitle: true,
                                       title: RichText(
                                         text: TextSpan(
@@ -161,7 +167,7 @@ class _MASTARState extends State<MASTAR> {
                                                 child: IconButton(
                                                     icon: const Icon(
                                                       Icons.settings,
-                                                      color: Colors.black,
+                                                      color: OMNIColors.backgroundColor,
                                                     ),
                                                     tooltip: "Settings".tr,
                                                     onPressed: () {
@@ -200,7 +206,7 @@ class _MASTARState extends State<MASTAR> {
                                                       IconButton(
                                                           icon: const Icon(
                                                             Icons.notifications,
-                                                            color: Colors.black,
+                                                            color: OMNIColors.backgroundColor,
                                                           ),
                                                           tooltip:
                                                               "Notifications"
@@ -263,7 +269,7 @@ class _MASTARState extends State<MASTAR> {
                                                         fit: BoxFit.cover,
                                                       )),
                                                   title: Text(
-                                                    User.name ?? User.email!,
+                                                    User.name ?? User.email!,style: const TextStyle(color: OMNIColors.backgroundColor),
                                                     overflow: TextOverflow.clip,
                                                   ),
                                                   trailing: TextButton(
@@ -283,7 +289,7 @@ class _MASTARState extends State<MASTAR> {
                                                 title: RichText(
                                                   text: TextSpan(
                                                     style: const TextStyle(
-                                                        color: Colors.black54),
+                                                        color: OMNIColors.backgroundColor),
                                                     children: <TextSpan>[
                                                       TextSpan(
                                                           text:
@@ -348,16 +354,15 @@ class _MASTARState extends State<MASTAR> {
                                                 visible: true,
                                                 child: ListTile(
                                                   leading:
-                                                      const Icon(Icons.code),
+                                                      const Icon(Icons.code,color: OMNIColors.backgroundColor,),
                                                   title: Text(
                                                       'Team management'.tr,
                                                       style: const TextStyle(
                                                           color:
-                                                              Colors.black54)),
+                                                              OMNIColors.backgroundColor)),
                                                   onTap: () {
                                                     setState(() {
-                                                      userOMNI =
-                                                          Page_OMNI.TEAM_OMNI;
+                                                      userOMNI = Page_OMNI.TEAM_OMNI;
                                                       TEWAMLISTOMNI = User;
                                                     });
                                                   },
@@ -368,11 +373,11 @@ class _MASTARState extends State<MASTAR> {
                                                     UserType.USER,
                                                 child: ListTile(
                                                   leading: const Icon(Icons
-                                                      .supervised_user_circle_sharp),
+                                                      .supervised_user_circle_sharp,color: OMNIColors.backgroundColor,),
                                                   title: Text('Users'.tr,
                                                       style: const TextStyle(
                                                           color:
-                                                              Colors.black54)),
+                                                              OMNIColors.backgroundColor)),
                                                   onTap: () {
                                                     setState(() {
                                                       userOMNI =
@@ -382,10 +387,10 @@ class _MASTARState extends State<MASTAR> {
                                                 ),
                                               ), // Done
                                               ListTile(
-                                                leading: const Icon(Icons.person),
+                                                leading: const Icon(Icons.person,color: OMNIColors.backgroundColor,),
                                                 title: Text('Profile'.tr,
                                                     style: const TextStyle(
-                                                        color: Colors.black54)),
+                                                        color: OMNIColors.backgroundColor)),
                                                 onTap: () {
                                                   setState(() {
                                                     PROFILE_Widget = false;
@@ -397,12 +402,11 @@ class _MASTARState extends State<MASTAR> {
                                                     UserType.MASTAR,
                                                 child: ListTile(
                                                     leading: const Icon(
-                                                        Icons.settings),
+                                                        Icons.settings,color: OMNIColors.backgroundColor,),
                                                     title: Text(
                                                         'System setting'.tr,
                                                         style: const TextStyle(
-                                                            color: Colors
-                                                                .black54)),
+                                                            color: OMNIColors.backgroundColor)),
                                                     onTap: () async {
                                                       Get.dialog(System_setting(
                                                           update: items));
@@ -410,13 +414,13 @@ class _MASTARState extends State<MASTAR> {
                                               ),
                                               ListTile(
                                                 leading:
-                                                    const Icon(Icons.language),
+                                                    const Icon(Icons.language,color: OMNIColors.backgroundColor,),
 
                                                 /// add img lang in wid..
                                                 title: Text(
                                                     'Change Language'.tr,
                                                     style: const TextStyle(
-                                                        color: Colors.black54)),
+                                                        color: OMNIColors.backgroundColor)),
                                                 onTap: () => FirebaseManager
                                                     .shared
                                                     .changeLanguage(context),
@@ -425,7 +429,7 @@ class _MASTARState extends State<MASTAR> {
                                                 visible: true,
                                                 child: ListTile(
                                                   leading:
-                                                      const Icon(Icons.delete),
+                                                      const Icon(Icons.delete,color: OMNIColors.backgroundColor,),
                                                   title: Text(
                                                       'Delete Account'.tr,
                                                       style: const TextStyle(
@@ -522,6 +526,7 @@ class _MASTARState extends State<MASTAR> {
                                                   ],
                                                 ),
                                                 TextFormField(
+                                                  style: TextStyle(color: OMNIColors.backgroundColor),
                                                   initialValue: User.name,
                                                   obscureText: false,
                                                   onChanged: (val) => setState(
@@ -535,14 +540,13 @@ class _MASTARState extends State<MASTAR> {
                                                         const UnderlineInputBorder(
                                                             borderSide:
                                                                 BorderSide(
-                                                                    color: Colors
-                                                                        .black)),
+                                                                    color: OMNIColors.backgroundColor)),
                                                     hintText:
                                                         'Enter Your Full Name'
                                                             .tr,
                                                     labelText: 'Full Name'.tr,
                                                     labelStyle: const TextStyle(
-                                                        color: Colors.black),
+                                                        color: OMNIColors.backgroundColor),
                                                     border:
                                                         const OutlineInputBorder(),
                                                   ),
@@ -551,6 +555,7 @@ class _MASTARState extends State<MASTAR> {
                                                   height: 15,
                                                 ),
                                                 TextFormField(
+                                                  style: TextStyle(color: OMNIColors.backgroundColor),
                                                   initialValue: User.phone,
                                                   obscureText: false,
                                                   onChanged: (val) => setState(
@@ -564,15 +569,14 @@ class _MASTARState extends State<MASTAR> {
                                                         const UnderlineInputBorder(
                                                             borderSide:
                                                                 BorderSide(
-                                                                    color: Colors
-                                                                        .black)),
+                                                                    color: OMNIColors.backgroundColor)),
                                                     hintText:
                                                         'Enter Your Phone Number'
                                                             .tr,
                                                     labelText:
                                                         'Phone Number'.tr,
                                                     labelStyle: const TextStyle(
-                                                        color: Colors.black),
+                                                        color: OMNIColors.backgroundColor),
                                                     border:
                                                         const OutlineInputBorder(),
                                                   ),
@@ -581,6 +585,7 @@ class _MASTARState extends State<MASTAR> {
                                                   height: 15,
                                                 ),
                                                 TextFormField(
+                                                  style: TextStyle(color: OMNIColors.backgroundColor),
                                                   initialValue: User.email,
                                                   obscureText: false,
                                                   onChanged: (val) => setState(
@@ -594,13 +599,12 @@ class _MASTARState extends State<MASTAR> {
                                                         const UnderlineInputBorder(
                                                             borderSide:
                                                                 BorderSide(
-                                                                    color: Colors
-                                                                        .black)),
+                                                                    color: OMNIColors.backgroundColor)),
                                                     hintText:
                                                         'Enter Your Email'.tr,
                                                     labelText: 'Email'.tr,
                                                     labelStyle: const TextStyle(
-                                                        color: Colors.black),
+                                                        color: OMNIColors.backgroundColor),
                                                     border:
                                                         const OutlineInputBorder(),
                                                   ),
@@ -609,6 +613,7 @@ class _MASTARState extends State<MASTAR> {
                                                   height: 15,
                                                 ),
                                                 TextFormField(
+                                                  style: TextStyle(color: OMNIColors.backgroundColor),
                                                   initialValue: User.city,
                                                   obscureText: false,
                                                   onChanged: (val) => setState(
@@ -622,20 +627,19 @@ class _MASTARState extends State<MASTAR> {
                                                         const UnderlineInputBorder(
                                                             borderSide:
                                                                 BorderSide(
-                                                                    color: Colors
-                                                                        .black)),
+                                                                    color: OMNIColors.backgroundColor)),
                                                     hintText:
                                                         'Enter country'.tr,
                                                     labelText: 'country'.tr,
                                                     labelStyle: const TextStyle(
-                                                        color: Colors.black),
+                                                        color: OMNIColors.backgroundColor),
                                                     border:
                                                         const OutlineInputBorder(),
                                                   ),
                                                 ),
                                                 const SizedBox(height: 10),
                                                 Text(
-                                                    "${'VAT %'.tr}${Setting.vat}"),
+                                                    "${'VAT %'.tr}${Setting.vat}",style: TextStyle(color: OMNIColors.backgroundColor),),
                                                 const SizedBox(height: 10),
                                                 SizedBox(
                                                   width: double.infinity,
@@ -695,7 +699,7 @@ class _MASTARState extends State<MASTAR> {
                                                     child: Text(
                                                       'Save'.tr,
                                                       style: const TextStyle(
-                                                          color: Colors.black),
+                                                          color: OMNIColors.backgroundColor),
                                                     ),
                                                   ),
                                                 ),
@@ -705,7 +709,7 @@ class _MASTARState extends State<MASTAR> {
                                     backLayerBackgroundColor:
                                         Colors.transparent,
                                     subHeader: OMNI_Widget
-                                        ? BackTeam(
+                                        ? BackdropSubHeader(
                                             trailing: InkWell(
                                               onTap: () async {
                                                 setState(() {
@@ -721,7 +725,7 @@ class _MASTARState extends State<MASTAR> {
                                             ),
                                             title: Text(User.name!,
                                                 style: const TextStyle(
-                                                    color: Colors.black54)))
+                                                    color: OMNIColors.backgroundColor)))
                                         : Visibility(
                                             visible: items.systemads,
                                             child: Column(
@@ -739,10 +743,10 @@ class _MASTARState extends State<MASTAR> {
                                             crossAxisAlignment:
                                                 CrossAxisAlignment.stretch,
                                             children: <Widget>[
-                                              BackTeam(
+                                              BackdropSubHeader(
                                                 title: Text(User.name!,
                                                     style: const TextStyle(
-                                                        color: Colors.black54)),
+                                                        color: OMNIColors.backgroundColor)),
                                                 trailing: InkWell(
                                                   onTap: () async {
                                                     setState(() {
@@ -790,7 +794,7 @@ class _MASTARState extends State<MASTAR> {
               leading: IconButton(
                   icon: const Icon(
                     Icons.dashboard,
-                    color: Colors.black,
+                    color: OMNIColors.backgroundColor,
                   ),
                   tooltip: "Dashboard".tr,
                   onPressed: () {
@@ -798,15 +802,15 @@ class _MASTARState extends State<MASTAR> {
                       Notifications = true;
                     });
                   }),
-              backgroundColor: Theme.of(context).canvasColor,
+              backgroundColor: OMNIColors.BlackBolor,
               elevation: 0,
-              iconTheme: IconThemeData(
-                color: Theme.of(context).primaryColor,
+              iconTheme: const IconThemeData(
+                color: OMNIColors.backgroundColor,
               ),
               title: Text(
                 "Notifications".tr,
                 style: const TextStyle(
-                  color: Colors.black,
+                  color: OMNIColors.backgroundColor,
                 ),
               ),
               centerTitle: true,
@@ -828,7 +832,7 @@ class _MASTARState extends State<MASTAR> {
                         ? Center(
                             child: Text(
                             "You have no notifications".tr,
-                            style: const TextStyle(color: Colors.black, fontSize: 18),
+                            style: const TextStyle(color: OMNIColors.backgroundColor, fontSize: 18),
                           ))
                         : ListView.builder(
                             padding: const EdgeInsets.all(20),
@@ -840,7 +844,7 @@ class _MASTARState extends State<MASTAR> {
                   } else {
                     return const Center(
                         child: CircularProgressIndicator(
-                      color: Colors.black54,
+                      color: OMNIColors.backgroundColor,
                       backgroundColor: OMNIColors.backgroundColor,
                     ));
                   }
@@ -885,7 +889,7 @@ class _MASTARState extends State<MASTAR> {
               return Center(
                   child: Text(
                 'You have no invoices'.tr,
-                style: const TextStyle(color: Colors.black54, fontSize: 18),
+                style: const TextStyle(color: OMNIColors.backgroundColor, fontSize: 18),
               ));
             }
             return Scaffold(
@@ -901,7 +905,7 @@ class _MASTARState extends State<MASTAR> {
                     ),
                   ),
                   elevation: 0,
-                  backgroundColor: OMNIColors.backgroundColor,
+                  backgroundColor: OMNIColors.BlackBolor,
                   title: RichText(
                     text: TextSpan(
                       children: <TextSpan>[
@@ -921,7 +925,10 @@ class _MASTARState extends State<MASTAR> {
                                   color: Colors.green),
                               tooltip: "chart".tr,
                               onPressed: () {
-                                Get.dialog(Chart(inv: inv));
+                                Get.dialog(
+                                    barrierColor: OMNIColors.backgroundColor,
+                                    Chart(inv: inv))
+                                ;
                               }),
                         ],
                       ),
@@ -953,7 +960,7 @@ class _MASTARState extends State<MASTAR> {
                           statusIcon = const Icon(
                             Icons.access_time,
                             size: 15,
-                            color: Colors.black54,
+                            color: OMNIColors.backgroundColor,
                           );
                           break;
                         case Payment.payment_processed:
@@ -1081,7 +1088,7 @@ class _MASTARState extends State<MASTAR> {
           } else {
             return const Center(
                 child: CircularProgressIndicator(
-              color: Colors.black54,
+              color: OMNIColors.backgroundColor,
               backgroundColor: OMNIColors.backgroundColor,
             ));
           }
@@ -1118,7 +1125,7 @@ class _MASTARState extends State<MASTAR> {
               return Center(
                   child: Text(
                 'You have no invoices'.tr,
-                style: const TextStyle(color: Colors.black54, fontSize: 18),
+                style: const TextStyle(color: OMNIColors.backgroundColor, fontSize: 18),
               ));
             }
             return Scaffold(
@@ -1134,7 +1141,7 @@ class _MASTARState extends State<MASTAR> {
                   ),
                 ),
                 elevation: 0,
-                backgroundColor: OMNIColors.backgroundColor,
+                backgroundColor: OMNIColors.BlackBolor,
                 title: RichText(
                   text: TextSpan(
                     children: <TextSpan>[
@@ -1186,7 +1193,7 @@ class _MASTARState extends State<MASTAR> {
                         statusIcon = const Icon(
                           Icons.access_time,
                           size: 15,
-                          color: Colors.black54,
+                          color: OMNIColors.backgroundColor,
                         );
                         break;
                       case Payment.payment_processed:
@@ -1312,7 +1319,7 @@ class _MASTARState extends State<MASTAR> {
           } else {
             return const Center(
                 child: CircularProgressIndicator(
-              color: Colors.black54,
+              color: OMNIColors.backgroundColor,
               backgroundColor: OMNIColors.backgroundColor,
             ));
           }
@@ -1348,7 +1355,7 @@ class _MASTARState extends State<MASTAR> {
               return Center(
                   child: Text(
                 'You have no invoices'.tr,
-                style: const TextStyle(color: Colors.black54, fontSize: 18),
+                style: const TextStyle(color: OMNIColors.backgroundColor, fontSize: 18),
               ));
             }
             return Scaffold(
@@ -1364,7 +1371,7 @@ class _MASTARState extends State<MASTAR> {
                     ),
                   ),
                   elevation: 0,
-                  backgroundColor: OMNIColors.backgroundColor,
+                  backgroundColor: OMNIColors.BlackBolor,
                   title: RichText(
                     text: TextSpan(
                       children: <TextSpan>[
@@ -1416,7 +1423,7 @@ class _MASTARState extends State<MASTAR> {
                           statusIcon = const Icon(
                             Icons.access_time,
                             size: 15,
-                            color: Colors.black54,
+                            color: OMNIColors.backgroundColor,
                           );
                           break;
                         case Payment.payment_processed:
@@ -1544,7 +1551,7 @@ class _MASTARState extends State<MASTAR> {
           } else {
             return const Center(
                 child: CircularProgressIndicator(
-              color: Colors.black54,
+              color: OMNIColors.backgroundColor,
               backgroundColor: OMNIColors.backgroundColor,
             ));
           }
@@ -1561,7 +1568,7 @@ class _MASTARState extends State<MASTAR> {
               return Center(
                   child: Text(
                 "No Online Support".tr,
-                style: const TextStyle(color: Colors.black54, fontSize: 18),
+                style: const TextStyle(color: OMNIColors.backgroundColor, fontSize: 18),
               ));
             }
             return ListView.builder(
@@ -1628,7 +1635,7 @@ class _MASTARState extends State<MASTAR> {
           } else {
             return const Center(
                 child: CircularProgressIndicator(
-              color: Colors.black54,
+              color: OMNIColors.backgroundColor,
               backgroundColor: OMNIColors.backgroundColor,
             ));
           }
@@ -1643,17 +1650,17 @@ class _MASTARState extends State<MASTAR> {
         Text(
           item.title,
           style: const TextStyle(
-              color: Colors.black, fontSize: 18, fontWeight: FontWeight.w600),
+              color: OMNIColors.backgroundColor, fontSize: 18, fontWeight: FontWeight.w600),
         ),
         const SizedBox(height: 5),
         Text(
           item.details,
-          style: const TextStyle(color: Colors.black54, fontSize: 16),
+          style: const TextStyle(color: OMNIColors.backgroundColor, fontSize: 16),
         ),
         const SizedBox(height: 10),
         Container(
           height: 1,
-          color: Colors.black,
+          color: OMNIColors.backgroundColor,
         ),
         const SizedBox(height: 10),
       ],
@@ -1677,7 +1684,7 @@ class _MASTARState extends State<MASTAR> {
           }
           return const Center(
               child: CircularProgressIndicator(
-            color: Colors.black54,
+            color: OMNIColors.backgroundColor,
             backgroundColor: OMNIColors.backgroundColor,
           ));
         });
@@ -1689,7 +1696,7 @@ class _MASTARState extends State<MASTAR> {
           leading: IconButton(
               icon: const Icon(
                 Icons.dashboard,
-                color: Colors.black,
+                color: OMNIColors.backgroundColor,
               ),
               tooltip: "Dashboard".tr,
               onPressed: () {
@@ -1697,10 +1704,10 @@ class _MASTARState extends State<MASTAR> {
                   userOMNI = Page_OMNI.AllHome;
                 });
               }),
-          backgroundColor: Colors.transparent,
+          backgroundColor: OMNIColors.BlackBolor,
           elevation: 0,
           iconTheme: const IconThemeData(
-            color: Colors.black,
+            color: OMNIColors.backgroundColor,
           ),
           title: appBarTitle,
           centerTitle: false,
@@ -1712,7 +1719,7 @@ class _MASTARState extends State<MASTAR> {
                 //          searchTextField!.clear();
                 setState(() {
                   if (actionIcon.icon == Icons.search) {
-                    actionIcon = const Icon(Icons.close, color: Colors.black);
+                    actionIcon = const Icon(Icons.close, color: OMNIColors.backgroundColor);
                     appBarTitle = TextField(
                       controller: searchTextField,
                       onChanged: (value) {
@@ -1725,21 +1732,23 @@ class _MASTARState extends State<MASTAR> {
                         setState(() {});
                       },
                       style: const TextStyle(
-                        color: Colors.black,
+                        color: OMNIColors.backgroundColor,
                       ),
                       textAlign: TextAlign.center,
                       decoration: InputDecoration(
                           focusedBorder: const UnderlineInputBorder(
-                              borderSide: BorderSide(color: Colors.black)),
+                              borderSide: BorderSide(color: OMNIColors.backgroundColor)),
                           prefixIcon:
-                              const Icon(Icons.search, color: Colors.black54),
-                          hintText: "Search".tr),
+                              const Icon(Icons.search, color: OMNIColors.backgroundColor),
+                          hintText: "Search".tr,
+                        hintStyle: TextStyle(color: OMNIColors.backgroundColor)
+                      ),
                     );
                   } else {
                     actionIcon = const Icon(Icons.search);
                     appBarTitle = Text(
                       "Users".tr,
-                      style: const TextStyle(color: Colors.black54),
+                      style: const TextStyle(color: OMNIColors.backgroundColor),
                     );
                   }
                 });
@@ -1788,7 +1797,7 @@ class _MASTARState extends State<MASTAR> {
                                 child: Text(
                                   "There are no Users".tr,
                                   style: const TextStyle(
-                                      fontSize: 18, color: Colors.black),
+                                      fontSize: 18, color: OMNIColors.backgroundColor),
                                 ),
                               )
                             : item(user: items[index - 1], OMNIID));
@@ -1806,7 +1815,7 @@ class _MASTARState extends State<MASTAR> {
       children: [
         Text(
           "Account Status :-".tr,
-          style: const TextStyle(fontSize: 18, color: Colors.black54),
+          style: const TextStyle(fontSize: 18, color: OMNIColors.backgroundColor),
         ),
         const SizedBox(height: 10),
         Row(
@@ -1814,7 +1823,7 @@ class _MASTARState extends State<MASTAR> {
             Row(
               children: [
                 Radio(
-                  activeColor: Colors.black54,
+                  activeColor: OMNIColors.backgroundColor,
                   value: Status.ACTIVE,
                   groupValue: status,
                   onChanged: (Status? value) {
@@ -1823,13 +1832,13 @@ class _MASTARState extends State<MASTAR> {
                     });
                   },
                 ),
-                Text("Active".tr),
+                Text("Active".tr,style: TextStyle(color: OMNIColors.backgroundColor),),
               ],
             ),
             Row(
               children: [
                 Radio(
-                  activeColor: Colors.black54,
+                  activeColor: OMNIColors.backgroundColor,
                   value: Status.Disable,
                   groupValue: status,
                   onChanged: (Status? value) {
@@ -1838,13 +1847,13 @@ class _MASTARState extends State<MASTAR> {
                     });
                   },
                 ),
-                Text("Disabled".tr),
+                Text("Disabled".tr,style: TextStyle(color: OMNIColors.backgroundColor),),
               ],
             ),
             Row(
               children: [
                 Radio(
-                  activeColor: Colors.black54,
+                  activeColor: OMNIColors.backgroundColor,
                   value: Status.Deleted,
                   groupValue: status,
                   onChanged: (Status? value) {
@@ -1853,7 +1862,7 @@ class _MASTARState extends State<MASTAR> {
                     });
                   },
                 ),
-                Text("Deleted".tr),
+                Text("Deleted".tr,style: TextStyle(color: OMNIColors.backgroundColor),),
               ],
             ),
           ],
@@ -1861,7 +1870,7 @@ class _MASTARState extends State<MASTAR> {
         const SizedBox(height: 20),
         Text(
           "User Type:-".tr,
-          style: const TextStyle(fontSize: 18, color: Colors.black54),
+          style: const TextStyle(fontSize: 18, color: OMNIColors.backgroundColor),
         ),
         const SizedBox(height: 10),
         Row(
@@ -1869,7 +1878,7 @@ class _MASTARState extends State<MASTAR> {
             Row(
               children: [
                 Radio(
-                  activeColor: Colors.black54,
+                  activeColor: OMNIColors.backgroundColor,
                   value: UserType.MASTAR,
                   groupValue: userType,
                   onChanged: (UserType? value) {
@@ -1878,13 +1887,13 @@ class _MASTARState extends State<MASTAR> {
                     });
                   },
                 ),
-                Text(" MASTAR".tr),
+                Text(" MASTAR".tr,style: TextStyle(color: OMNIColors.backgroundColor),),
               ],
             ),
             Row(
               children: [
                 Radio(
-                  activeColor: Colors.black54,
+                  activeColor: OMNIColors.backgroundColor,
                   value: UserType.ADMIN,
                   groupValue: userType,
                   onChanged: (UserType? value) {
@@ -1893,13 +1902,13 @@ class _MASTARState extends State<MASTAR> {
                     });
                   },
                 ),
-                Text(" ADMIN".tr),
+                Text(" ADMIN".tr,style: TextStyle(color: OMNIColors.backgroundColor),),
               ],
             ),
             Row(
               children: [
                 Radio(
-                  activeColor: Colors.black54,
+                  activeColor: OMNIColors.backgroundColor,
                   value: UserType.USER,
                   groupValue: userType,
                   onChanged: (UserType? value) {
@@ -1908,7 +1917,7 @@ class _MASTARState extends State<MASTAR> {
                     });
                   },
                 ),
-                Text(" USER".tr),
+                Text(" USER".tr,style: TextStyle(color: OMNIColors.backgroundColor),),
               ],
             ),
           ],
@@ -1916,7 +1925,7 @@ class _MASTARState extends State<MASTAR> {
         const SizedBox(height: 20),
         Container(
           height: 1,
-          color: Colors.black54,
+          color: OMNIColors.backgroundColor,
         ),
         const SizedBox(height: 20),
       ],
@@ -2081,7 +2090,7 @@ class _MASTARState extends State<MASTAR> {
           child: Container(
             padding: const EdgeInsets.all(20),
             decoration: BoxDecoration(
-              border: Border.all(color: Colors.black),
+              border: Border.all(color: OMNIColors.backgroundColor),
               borderRadius: const BorderRadius.all(Radius.circular(15)),
             ),
             child: Column(
@@ -2091,14 +2100,14 @@ class _MASTARState extends State<MASTAR> {
                   children: [
                     RichText(
                         text: TextSpan(
-                      style: const TextStyle(color: Colors.black),
+                      style: const TextStyle(color: OMNIColors.backgroundColor),
                       children: <TextSpan>[
                         TextSpan(
                           text: "User ID: ".tr,
                         ),
                         TextSpan(
                             text: user.id!,
-                            style: const TextStyle(color: Colors.black54)),
+                            style: const TextStyle(color: OMNIColors.backgroundColor)),
                       ],
                     )),
                     InkWell(
@@ -2117,7 +2126,7 @@ class _MASTARState extends State<MASTAR> {
                       child: Center(
                           child: Text(
                         "Settings".tr,
-                        style: const TextStyle(color: Colors.black, fontSize: 15),
+                        style: const TextStyle(color: OMNIColors.backgroundColor, fontSize: 15),
                       )),
                     ),
                   ],
@@ -2435,7 +2444,7 @@ class _MASTARState extends State<MASTAR> {
                       child: RichText(
                         textAlign: TextAlign.right,
                         text: TextSpan(
-                          style: const TextStyle(color: Colors.black54),
+                          style: const TextStyle(color: OMNIColors.backgroundColor),
                           children: <TextSpan>[
                             TextSpan(
                                 text: user.support == true ? " ONLINE" : null,
@@ -2465,7 +2474,7 @@ class _MASTARState extends State<MASTAR> {
           leading: IconButton(
               icon: const Icon(
                 Icons.dashboard,
-                color: Colors.black,
+                color: OMNIColors.backgroundColor,
               ),
               tooltip: "Dashboard".tr,
               onPressed: () {
@@ -2476,7 +2485,7 @@ class _MASTARState extends State<MASTAR> {
           backgroundColor: Colors.transparent,
           elevation: 0,
           iconTheme: const IconThemeData(
-            color: Colors.black,
+            color: OMNIColors.backgroundColor,
           ),
           title: appBarTitle,
           centerTitle: false,
@@ -2488,7 +2497,7 @@ class _MASTARState extends State<MASTAR> {
                 //          searchTextField!.clear();
                 setState(() {
                   if (actionIcon.icon == Icons.search) {
-                    actionIcon = const Icon(Icons.close, color: Colors.black);
+                    actionIcon = const Icon(Icons.close, color: OMNIColors.backgroundColor);
                     appBarTitle = TextField(
                       controller: searchTextField,
                       onChanged: (value) {
@@ -2501,21 +2510,23 @@ class _MASTARState extends State<MASTAR> {
                         setState(() {});
                       },
                       style: const TextStyle(
-                        color: Colors.black,
+                        color: OMNIColors.backgroundColor,
                       ),
                       textAlign: TextAlign.center,
                       decoration: InputDecoration(
                           focusedBorder: const UnderlineInputBorder(
-                              borderSide: BorderSide(color: Colors.black)),
+                              borderSide: BorderSide(color: OMNIColors.backgroundColor)),
                           prefixIcon:
-                              const Icon(Icons.search, color: Colors.black54),
-                          hintText: "Search".tr),
+                              const Icon(Icons.search, color: OMNIColors.backgroundColor),
+                          hintText: "Search".tr
+                          ,hintStyle: const TextStyle(color: OMNIColors.backgroundColor)
+                      ),
                     );
                   } else {
                     actionIcon = const Icon(Icons.search);
                     appBarTitle = Text(
                       "Users".tr,
-                      style: const TextStyle(color: Colors.black54),
+                      style: const TextStyle(color: OMNIColors.backgroundColor),
                     );
                   }
                 });
@@ -2581,7 +2592,7 @@ class _MASTARState extends State<MASTAR> {
         const SizedBox(height: 10),
         Container(
           height: 1,
-          color: Colors.black54,
+          color: OMNIColors.backgroundColor,
         ),
         const SizedBox(height: 20),
       ],
@@ -2774,7 +2785,7 @@ class _MASTARState extends State<MASTAR> {
                     text: TextSpan(
                       text: "Status:".tr,
                       style:
-                          const TextStyle(color: Colors.black54, fontSize: 10),
+                          const TextStyle(color: OMNIColors.backgroundColor, fontSize: 10),
                       children: <TextSpan>[
                         TextSpan(
                             text: user.accountStatus == Status.ACTIVE
@@ -3064,7 +3075,7 @@ class _MASTARState extends State<MASTAR> {
                           child: const Icon(
                             Icons.notifications,
                             size: 20,
-                            color: Colors.black54,
+                            color: OMNIColors.backgroundColor,
                           ),
                         ),
                         InkWell(
@@ -3084,7 +3095,7 @@ class _MASTARState extends State<MASTAR> {
                           child: const Icon(
                             Icons.settings,
                             size: 20,
-                            color: Colors.black54,
+                            color: OMNIColors.backgroundColor,
                           ),
                         ),
                       ]),
@@ -3116,7 +3127,7 @@ class _MASTARState extends State<MASTAR> {
                     child: RichText(
                       textAlign: TextAlign.right,
                       text: TextSpan(
-                        style: const TextStyle(color: Colors.black54),
+                        style: const TextStyle(color: OMNIColors.backgroundColor),
                         children: <TextSpan>[
                           TextSpan(
                               text: user.support == true ? " ONLINE" : null,
@@ -3144,7 +3155,7 @@ class _MASTARState extends State<MASTAR> {
           leading: IconButton(
               icon: const Icon(
                 Icons.dashboard,
-                color: Colors.black,
+                color: OMNIColors.backgroundColor,
               ),
               tooltip: "Dashboard".tr,
               onPressed: () {
@@ -3152,15 +3163,15 @@ class _MASTARState extends State<MASTAR> {
                   userOMNI = Page_OMNI.AllHome;
                 });
               }),
-          backgroundColor: Colors.transparent,
+          backgroundColor: OMNIColors.BlackBolor,
           elevation: 0,
           iconTheme: const IconThemeData(
-            color: Colors.black,
+            color: OMNIColors.backgroundColor,
           ),
           title: Text(
             'Users'.tr,
             style: const TextStyle(
-              color: Colors.black54,
+              color: OMNIColors.backgroundColor,
             ),
           ),
           centerTitle: true,
@@ -3170,7 +3181,7 @@ class _MASTARState extends State<MASTAR> {
               child: IconButton(
                   icon: const Icon(
                     Icons.add,
-                    color: Colors.black,
+                    color: OMNIColors.backgroundColor,
                   ),
                   tooltip: "ADD Users".tr,
                   onPressed: () {
@@ -3206,7 +3217,7 @@ class _MASTARState extends State<MASTAR> {
                           Center(
                               child: Text(
                             "There are no Users".tr,
-                            style: const TextStyle(fontSize: 18, color: Colors.black),
+                            style: const TextStyle(fontSize: 18, color: OMNIColors.backgroundColor),
                           )),
                         ],
                       )
@@ -3220,7 +3231,7 @@ class _MASTARState extends State<MASTAR> {
                             return Container(
                                 padding: const EdgeInsets.all(20),
                                 decoration: BoxDecoration(
-                                  border: Border.all(color: Colors.black),
+                                  border: Border.all(color: OMNIColors.backgroundColor),
                                   borderRadius: const BorderRadius.all(
                                       Radius.circular(15)),
                                 ),
@@ -3230,7 +3241,7 @@ class _MASTARState extends State<MASTAR> {
                                         MainAxisAlignment.spaceBetween,
                                     children: [
                                       Text(
-                                        "User ID: ${items[index].id!}",
+                                        "User ID: ${items[index].id!}",style: TextStyle(color: OMNIColors.backgroundColor),
                                       ),
                                       IconButton(
                                         iconSize: 15,
@@ -3238,7 +3249,7 @@ class _MASTARState extends State<MASTAR> {
                                         icon: const Icon(
                                           size: 18,
                                           Icons.chat,
-                                          color: Colors.black,
+                                          color: OMNIColors.backgroundColor,
                                         ),
                                       ),
                                     ],
@@ -3246,32 +3257,32 @@ class _MASTARState extends State<MASTAR> {
                                   Row(
                                     children: [
                                       Text(
-                                        "User name: ".tr,
+                                        "User name: ".tr,style: TextStyle(color: OMNIColors.backgroundColor),
                                       ),
                                       const SizedBox(width: 10),
-                                      Flexible(child: Text(items[index].name!)),
+                                      Flexible(child: Text(items[index].name!,style: TextStyle(color: OMNIColors.backgroundColor))),
                                     ],
                                   ),
                                   const SizedBox(height: 10),
                                   Row(
                                     children: [
                                       Text(
-                                        "Email: ".tr,
+                                        "Email: ".tr,style: TextStyle(color: OMNIColors.backgroundColor),
                                       ),
                                       const SizedBox(width: 10),
                                       Flexible(
-                                          child: Text(items[index].email!)),
+                                          child: Text(items[index].email!,style: TextStyle(color: OMNIColors.backgroundColor))),
                                     ],
                                   ),
                                   const SizedBox(height: 10),
                                   Row(
                                     children: [
                                       Text(
-                                        "Phone: ".tr,
+                                        "Phone: ".tr,style: TextStyle(color: OMNIColors.backgroundColor),
                                       ),
                                       const SizedBox(width: 10),
                                       Flexible(
-                                          child: Text(items[index].phone!)),
+                                          child: Text(items[index].phone!,style: const TextStyle(color: OMNIColors.backgroundColor))),
                                     ],
                                   ),
                                   const SizedBox(height: 10),
@@ -3281,7 +3292,7 @@ class _MASTARState extends State<MASTAR> {
                                     child: Row(
                                       children: [
                                         Text(
-                                          'Revenue: '.tr,
+                                          'Revenue: '.tr,style: TextStyle(color: OMNIColors.backgroundColor),
                                         ),
                                         StreamBuilder<List<InvoiceModel>>(
                                           stream: FirebaseManager.shared
@@ -3298,7 +3309,7 @@ class _MASTARState extends State<MASTAR> {
                                               _buildTotalMoney(payDone, []);
                                             }
                                             return Text(
-                                              totalMoney,
+                                              totalMoney,style: TextStyle(color: OMNIColors.backgroundColor)
                                             );
                                           },
                                         ),
@@ -3310,7 +3321,7 @@ class _MASTARState extends State<MASTAR> {
                                         MainAxisAlignment.spaceBetween,
                                     children: [
                                       Text(
-                                        "${'Date created: '.tr}${items[index].dateCreated!.toString().substring(0, 10)}",
+                                        "${'Date created: '.tr}${items[index].dateCreated!.toString().substring(0, 10)}",style: TextStyle(color: OMNIColors.backgroundColor),
                                       ),
                                       Visibility(
                                         visible: TEWAMLISTOMNI.uid ==
@@ -3350,7 +3361,7 @@ class _MASTARState extends State<MASTAR> {
               } else {
                 return const Center(
                     child: CircularProgressIndicator(
-                  color: Colors.black54,
+                  color: OMNIColors.backgroundColor,
                   backgroundColor: OMNIColors.backgroundColor,
                 ));
               }
@@ -3363,7 +3374,7 @@ class _MASTARState extends State<MASTAR> {
           leading: IconButton(
               icon: const Icon(
                 Icons.supervised_user_circle_sharp,
-                color: Colors.black,
+                color: OMNIColors.backgroundColor,
               ),
               tooltip: "Users".tr,
               onPressed: () {
@@ -3372,7 +3383,7 @@ class _MASTARState extends State<MASTAR> {
                 });
               }),
           toolbarHeight: 70.0,
-          title: Text("Total: ".tr, style: const TextStyle(color: Colors.black)),
+          title: Text("Total: ".tr, style: const TextStyle(color: OMNIColors.backgroundColor)),
           centerTitle: true,
           backgroundColor: Theme.of(context).scaffoldBackgroundColor,
           elevation: 0,
@@ -3383,7 +3394,7 @@ class _MASTARState extends State<MASTAR> {
             IconButton(
                 icon: const Icon(
                   Icons.dashboard,
-                  color: Colors.black,
+                  color: OMNIColors.backgroundColor,
                 ),
                 tooltip: "Dashboard".tr,
                 onPressed: () {
@@ -3421,7 +3432,7 @@ class _MASTARState extends State<MASTAR> {
               _buildTotalMoney(OMNIDone, []);
               return Column(
                 children: <Widget>[
-                  Text(totalMoney, style: const TextStyle(color: Colors.black)),
+                  Text(totalMoney, style: const TextStyle(color: OMNIColors.backgroundColor)),
                   Container(
                     child: Padding(
                       padding: const EdgeInsets.all(0.0),
@@ -3490,7 +3501,7 @@ class _MASTARState extends State<MASTAR> {
                                 statusIcon = const Icon(
                                   Icons.access_time,
                                   size: 15,
-                                  color: Colors.black54,
+                                  color: OMNIColors.backgroundColor,
                                 );
                                 break;
                               case Payment.payment_processed:
@@ -3634,7 +3645,7 @@ class _MASTARState extends State<MASTAR> {
             } else {
               return const Center(
                   child: CircularProgressIndicator(
-                color: Colors.black54,
+                color: OMNIColors.backgroundColor,
                 backgroundColor: OMNIColors.backgroundColor,
               ));
             }

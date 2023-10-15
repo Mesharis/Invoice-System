@@ -68,12 +68,12 @@ class _StepperDemoState extends State<StepperDemo> {
     return Scaffold(
         appBar: AppBar(
           title: Text('${"Total: ".tr} ${_totalAmount}',
-              style: TextStyle(color: OMNIColors.BlackBolor)),
+              style: TextStyle(color: OMNIColors.backgroundColor)),
           backgroundColor: Colors.transparent,
           elevation: 0,
           centerTitle: true,
           iconTheme: const IconThemeData(
-            color: OMNIColors.BlackBolor,
+            color: OMNIColors.backgroundColor,
           ),
         ),
         floatingActionButton: Column(
@@ -83,8 +83,8 @@ class _StepperDemoState extends State<StepperDemo> {
                 visible: _currentStep > 0,
                 child: FloatingActionButton(
                   heroTag: 'a',
-                  backgroundColor: OMNIColors.BlackBolor,
-                  child: const Icon(Icons.keyboard_arrow_up,color: Colors.white),
+                  backgroundColor: OMNIColors.backgroundColor,
+                  child: const Icon(Icons.keyboard_arrow_up,color: OMNIColors.BlackBolor),
                   mini: true,
                   onPressed: _currentStep > 0 ? cancel : null,
                 )),
@@ -92,8 +92,8 @@ class _StepperDemoState extends State<StepperDemo> {
               visible: _currentStep < 2,
               child: FloatingActionButton(
                 heroTag: 'b',
-                backgroundColor: OMNIColors.BlackBolor,
-                child: const Icon(Icons.keyboard_arrow_down,color: Colors.white),
+                backgroundColor: OMNIColors.backgroundColor,
+                child: const Icon(Icons.keyboard_arrow_down,color: OMNIColors.BlackBolor),
                 mini: true,
                 onPressed: _currentStep < 2 ? continued : null,
               ),
@@ -102,8 +102,8 @@ class _StepperDemoState extends State<StepperDemo> {
                 visible: _currentStep > 1,
                 child: FloatingActionButton(
                   heroTag: 'c',
-                  backgroundColor: OMNIColors.BlackBolor,
-                  child: const Icon(Icons.send,color: Colors.white),
+                  backgroundColor: OMNIColors.backgroundColor,
+                  child: const Icon(Icons.send,color:OMNIColors.BlackBolor),
                   mini: true,
                   onPressed: () async {
                     if (Email == "" || phone == "" || name == "" || _totalAmount == 0) {
@@ -187,10 +187,10 @@ class _StepperDemoState extends State<StepperDemo> {
                                   maxLength: 20,
                                   decoration: InputDecoration(
                                     focusedBorder: const UnderlineInputBorder(
-                                        borderSide: BorderSide(color: OMNIColors.BlackBolor)
+                                        borderSide: BorderSide(color: OMNIColors.backgroundColor)
                                     ),
                                     labelText: 'description'.tr,
-                                    labelStyle: TextStyle(color: OMNIColors.BlackBolor),
+                                    labelStyle: TextStyle(color: OMNIColors.backgroundColor),
 
                                     // AT: This should be a dropdown
                                   ),
@@ -210,10 +210,10 @@ class _StepperDemoState extends State<StepperDemo> {
                                   keyboardType: TextInputType.number,
                                   decoration: InputDecoration(
                                     focusedBorder: const UnderlineInputBorder(
-                                        borderSide: BorderSide(color: OMNIColors.BlackBolor)
+                                        borderSide: BorderSide(color: OMNIColors.backgroundColor)
                                     ),
                                     labelText: 'VAT %'.tr,
-                                    labelStyle: TextStyle(color: OMNIColors.BlackBolor),
+                                    labelStyle: TextStyle(color: OMNIColors.backgroundColor),
 
                                     // AT: This should be a dropdown
                                   ),
@@ -233,14 +233,14 @@ class _StepperDemoState extends State<StepperDemo> {
                                     keyboardType: TextInputType.number,
                                     decoration: InputDecoration(
                                       focusedBorder: const UnderlineInputBorder(
-                                          borderSide: BorderSide(color: OMNIColors.BlackBolor)
+                                          borderSide: BorderSide(color: OMNIColors.backgroundColor)
                                       ),
                                       icon: Icon(
-                                        Icons.attach_money, color:OMNIColors.BlackBolor
+                                        Icons.attach_money, color:OMNIColors.backgroundColor
                                       ),
                                       contentPadding: EdgeInsets.all(8),
                                       labelText: 'Price'.tr,
-                                      labelStyle: TextStyle(color: OMNIColors.BlackBolor),
+                                      labelStyle: TextStyle(color: OMNIColors.backgroundColor),
 
                                     ),
                                     onChanged: (val) =>
@@ -266,14 +266,14 @@ class _StepperDemoState extends State<StepperDemo> {
                                     keyboardType: TextInputType.number,
                                     decoration: InputDecoration(
                                       focusedBorder: const UnderlineInputBorder(
-                                          borderSide: BorderSide(color: OMNIColors.BlackBolor)
+                                          borderSide: BorderSide(color: OMNIColors.backgroundColor)
                                       ),
                                       icon: Icon(
-                                        Icons.shopping_cart,color:OMNIColors.BlackBolor
+                                        Icons.shopping_cart,color:OMNIColors.backgroundColor
                                       ),
                                       contentPadding: EdgeInsets.all(8),
                                       labelText: 'Qty'.tr,
-                                      labelStyle: TextStyle(color: OMNIColors.BlackBolor),
+                                      labelStyle: TextStyle(color: OMNIColors.backgroundColor),
 
                                     ),
                                   ),
@@ -292,14 +292,14 @@ class _StepperDemoState extends State<StepperDemo> {
                                     keyboardType: TextInputType.number,
                                     decoration: InputDecoration(
                                       focusedBorder: const UnderlineInputBorder(
-                                          borderSide: BorderSide(color: OMNIColors.BlackBolor)
+                                          borderSide: BorderSide(color: OMNIColors.backgroundColor)
                                       ),
                                       icon: Icon(
-                                        Icons.discount,color:OMNIColors.BlackBolor
+                                        Icons.discount,color:OMNIColors.backgroundColor
                                       ),
                                       contentPadding: EdgeInsets.all(8),
                                       labelText: 'discount %'.tr,
-                                      labelStyle: TextStyle(color: OMNIColors.BlackBolor),
+                                      labelStyle: TextStyle(color: OMNIColors.backgroundColor),
 
                                     ),
                                   ),
@@ -329,7 +329,7 @@ class _StepperDemoState extends State<StepperDemo> {
                                     Text(
                                       "No Details List To Display".tr,
                                       style: TextStyle(
-                                          color: OMNIColors.BlackBolor,
+                                          color: OMNIColors.backgroundColor,
                                           fontWeight: FontWeight.w600,
                                           fontSize: 20),
                                       textAlign: TextAlign.center,
@@ -341,7 +341,7 @@ class _StepperDemoState extends State<StepperDemo> {
                                       "Click on Plus Icon (+) to add new Details"
                                           .tr,
                                       style: TextStyle(
-                                          color: OMNIColors.BlackBolor,
+                                          color: OMNIColors.backgroundColor,
                                           fontWeight: FontWeight.w400,
                                           fontSize: 16),
                                       textAlign: TextAlign.center,
@@ -382,10 +382,10 @@ class _StepperDemoState extends State<StepperDemo> {
                           textInputAction: TextInputAction.next,
                           decoration: InputDecoration(
                             focusedBorder: const UnderlineInputBorder(
-                                borderSide: BorderSide(color: OMNIColors.BlackBolor)),
+                                borderSide: BorderSide(color: OMNIColors.backgroundColor)),
                             hintText: 'Enter Your Number VAT'.tr,
                             labelText: 'Number VAT'.tr,
-                            labelStyle: TextStyle(color: OMNIColors.BlackBolor),
+                            labelStyle: TextStyle(color: OMNIColors.backgroundColor),
                             border: OutlineInputBorder(),
                           ),
                         ),
@@ -396,10 +396,10 @@ class _StepperDemoState extends State<StepperDemo> {
                           textInputAction: TextInputAction.next,
                           decoration: InputDecoration(
                             focusedBorder: const UnderlineInputBorder(
-                                borderSide: BorderSide(color: OMNIColors.BlackBolor)),
+                                borderSide: BorderSide(color: OMNIColors.backgroundColor)),
                             hintText: 'Enter Your Client name'.tr,
                             labelText: 'name'.tr,
-                            labelStyle: TextStyle(color: OMNIColors.BlackBolor),
+                            labelStyle: TextStyle(color: OMNIColors.backgroundColor),
                             border: OutlineInputBorder(),
                           ),
                         ),
@@ -410,10 +410,10 @@ class _StepperDemoState extends State<StepperDemo> {
                           textInputAction: TextInputAction.next,
                           decoration: InputDecoration(
                             focusedBorder: const UnderlineInputBorder(
-                                borderSide: BorderSide(color: OMNIColors.BlackBolor)),
+                                borderSide: BorderSide(color: OMNIColors.backgroundColor)),
                             hintText: 'Enter Your Client Email'.tr,
                             labelText: 'Email'.tr,
-                            labelStyle: TextStyle(color: OMNIColors.BlackBolor),
+                            labelStyle: TextStyle(color: OMNIColors.backgroundColor),
                             border: OutlineInputBorder(),
                           ),
                         ),
@@ -424,10 +424,10 @@ class _StepperDemoState extends State<StepperDemo> {
                           textInputAction: TextInputAction.done,
                           decoration: InputDecoration(
                             focusedBorder: const UnderlineInputBorder(
-                                borderSide: BorderSide(color: OMNIColors.BlackBolor)),
+                                borderSide: BorderSide(color: OMNIColors.backgroundColor)),
                             hintText: 'Enter Your Client phone'.tr,
                             labelText: 'phone'.tr,
-                            labelStyle: TextStyle(color: OMNIColors.BlackBolor),
+                            labelStyle: TextStyle(color: OMNIColors.backgroundColor),
                             border: OutlineInputBorder(),
                           ),
                         ),
@@ -468,7 +468,7 @@ class _StepperDemoState extends State<StepperDemo> {
             Container(
                 child: Text((index + 1).toString(),
                     style: const TextStyle(
-                        fontWeight: FontWeight.bold, color: OMNIColors.BlackBolor))),
+                        fontWeight: FontWeight.bold, color: OMNIColors.backgroundColor))),
             Expanded(
               child: Text(
                 _title1,
@@ -505,7 +505,7 @@ class _StepperDemoState extends State<StepperDemo> {
               padding: EdgeInsets.zero,
               constraints: const BoxConstraints(),
               icon: const Icon(Icons.add),
-              color: OMNIColors.BlackBolor,
+              color: OMNIColors.backgroundColor,
               tooltip: 'Add New',
               onPressed: () {
                 setState(() {

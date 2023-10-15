@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
-import 'package:Crack/flutter.dart' as charts;
+import 'package:charts_flutter/flutter.dart' as charts;
 import 'package:invoice/widgets/pallete.dart';
 import '../Model/InvoiceModel.dart';
 
@@ -59,7 +59,7 @@ class _ChartState extends State<Chart> {
                                   items: chartDropdownItems.map((String title) {
                                     return DropdownMenuItem(
                                       value: title,
-                                      child: Text(title),
+                                      child: Text(title,style: const TextStyle(color: OMNIColors.redolor),),
                                     );
                                   }).toList()),
                             ),

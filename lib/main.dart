@@ -45,7 +45,7 @@ class MyApp extends StatelessWidget {
       fallbackLocale: Get.deviceLocale,
       theme: ThemeData(
         primarySwatch:Colors.grey,
-        canvasColor: Colors.white,
+        canvasColor: Colors.black,
         fontFamily: 'HacenTunisia',
 
       ),

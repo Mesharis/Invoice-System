@@ -50,14 +50,14 @@ class _FooterState extends State<Footer> {
                       Text(
                         "Totel Users".tr,
                         style: const TextStyle(
-                          color: OMNIColors.BlackBolor,
+                          color: OMNIColors.backgroundColor,
 
                         ),
                       ),
                       Text(
                         "${widget.items.Totel_USER}",
                         style: const TextStyle(
-                          color: OMNIColors.BlackBolor,
+                          color: OMNIColors.backgroundColor,
 
                         ),
                       ),
@@ -66,7 +66,7 @@ class _FooterState extends State<Footer> {
                         child: const Text(
                           "|",
                           style: TextStyle(
-                            color: OMNIColors.BlackBolor,
+                            color: OMNIColors.backgroundColor,
 
                           ),
                         ),
@@ -74,13 +74,13 @@ class _FooterState extends State<Footer> {
                       Text(
                         "Totel Invoices".tr,
                         style: const TextStyle(
-                          color: OMNIColors.BlackBolor,
+                          color: OMNIColors.backgroundColor,
                         ),
                       ),
                       Text(
                         "${widget.items.Totel_INVOICE} ",
                         style: const TextStyle(
-                          color: OMNIColors.BlackBolor,
+                          color: OMNIColors.backgroundColor,
                         ),
                       ),
                     ],
@@ -95,34 +95,34 @@ class _FooterState extends State<Footer> {
                         Text(
                         "Copyright".tr,
                           style: const TextStyle(
-                            color: OMNIColors.BlackBolor,
+                            color: OMNIColors.backgroundColor,
 
                           ),
                         ),
                         const Text(
                           " ",
                           style: TextStyle(
-                            color: OMNIColors.BlackBolor,
+                            color: OMNIColors.backgroundColor,
 
                           ),
                         ),
                         Text(lang == LanguageEnum.arabic ? widget.items.titleAr : lang == LanguageEnum.english ? widget.items.titleEn : Get.deviceLocale.toString() == 'ar' ? widget.items.titleAr : widget.items.titleEn ,
                           style: const TextStyle(
-                            color: OMNIColors.BlackBolor,
+                            color: OMNIColors.backgroundColor,
 
                           ),
                         ),
                         const Text(
                           " ",
                           style: TextStyle(
-                            color: OMNIColors.BlackBolor,
+                            color: OMNIColors.backgroundColor,
 
                           ),
                         ),
                         Text(
                         "All rights Reserved".tr,
                           style: const TextStyle(
-                            color: OMNIColors.BlackBolor,
+                            color: OMNIColors.backgroundColor,
                           ),
                         ),
                       ],

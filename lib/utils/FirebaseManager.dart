@@ -1,8 +1,8 @@
 import 'dart:async';
 import 'dart:io';
 import 'dart:math';
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:Crack/carousel_slider.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
@@ -21,6 +21,7 @@ import '../Model/invoice1model.dart';
 import '../Model/systemnodel.dart';
 import '../Model/user_profile.dart';
 import '../widgets/language.dart';
+import '../widgets/pallete.dart';
 
 
 class FirebaseManager {
@@ -698,7 +699,9 @@ class FirebaseManager {
           return Wrap(
             children: <Widget>[
               ListTile(
-                title: Text('English'.tr),
+                title: Text('English'.tr,
+                    style: TextStyle(color: OMNIColors.backgroundColor),
+                    ),
                 onTap: () {
                   Get.updateLocale(LanguageEnum.english.locale);
                   UserProfile.shared.setLanguage(lang: LanguageEnum.english);
@@ -707,7 +710,7 @@ class FirebaseManager {
                 },
               ),
               ListTile(
-                title: Text('Arabic'.tr),
+                title: Text('Arabic'.tr ,style: TextStyle(color: OMNIColors.backgroundColor),),
                 onTap: () {
                   Get.updateLocale(LanguageEnum.arabic.locale);
                   UserProfile.shared.setLanguage(lang: LanguageEnum.arabic);
@@ -716,7 +719,7 @@ class FirebaseManager {
                 },
               ),
               ListTile(
-                title: Text('Swedish'.tr),
+                title: Text('Swedish'.tr,style: TextStyle(color: OMNIColors.backgroundColor),),
                 onTap: () {
                   Get.updateLocale(LanguageEnum.Swedish.locale);
                   UserProfile.shared.setLanguage(lang: LanguageEnum.Swedish);
@@ -725,7 +728,7 @@ class FirebaseManager {
                 },
               ),
               ListTile(
-                title: Text('French'.tr),
+                title: Text('French'.tr,style: TextStyle(color: OMNIColors.backgroundColor),),
                 onTap: () {
                   Get.updateLocale(LanguageEnum.france.locale);
                   UserProfile.shared.setLanguage(lang: LanguageEnum.france);
