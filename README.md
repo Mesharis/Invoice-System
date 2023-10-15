@@ -9,3 +9,5 @@ Enable the Firebase Database.
 download https://github.com/Mesharis/Invoice-System.git
 edit file utils / firebase_options.dart
 On the command line run flutter pub get.
+On the command line run flutter run -d chrome --web-renderer html       
+flutter build web --web-renderer html --release
